@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberHaven - My Personal Space</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CyberHaven</div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+                <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+                <li><a href="#" onclick="showSection('expertise')">Expertise</a></li>
+                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 class="hero-title">Welcome to My CyberHaven</h1>
+        <div class="hero-content">
+            <p class="animated-text"><i></i></p>
+            <div class="button-container">
+                <button class="cta">Connect</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I'm a Computer Engineer with a deep interest in AI, cybersecurity, and system design. I love building efficient solutions for complex problems.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>Programming: Python, C++, Java, JavaScript</li>
+            <li>Cybersecurity & Ethical Hacking</li>
+            <li>Embedded Systems & IoT</li>
+            <li>Cloud Computing & DevOps</li>
+            <li>Machine Learning & AI</li>
+        </ul>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <h2>Areas of Expertise</h2>
+        <div class="expertise-boxes">
+            <div class="expertise-box">
+                <h3>Software Development</h3>
+                <p>Building scalable applications and secure systems.</p>
+            </div>
+            <div class="expertise-box">
+                <h3>Cybersecurity</h3>
+                <p>Protecting systems from cyber threats and vulnerabilities.</p>
+            </div>
+            <div class="expertise-box">
+                <h3>Embedded Systems</h3>
+                <p>Designing hardware-software integrated solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <ul>
+            <li>AI-Powered Cybersecurity Scanner</li>
+            <li>IoT-Based Home Automation System</li>
+            <li>Real-Time Network Traffic Analyzer</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: myemail@example.com</p>
+        <p>LinkedIn: linkedin.com/in/myprofile</p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll("section").forEach(section => {
+                section.style.display = "none";
+            });
+
+            // Show only the selected section
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        // Ensure only the home section is visible on load
+        document.addEventListener("DOMContentLoaded", function () {
+            showSection("home");
+        });
+
+        // Typewriter effect for hero text
+        const text = "A Safe Space for Innovation.";
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                document.querySelector(".animated-text i").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
+</body>
+</html>
